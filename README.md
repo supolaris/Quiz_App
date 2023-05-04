@@ -6,7 +6,7 @@
 
 React native vector icons:
 ```bash
-npm i react-native-vector-icons
+npm install --save react-native-vector-icons
 ```
 Edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
 ```bash

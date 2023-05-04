@@ -1,11 +1,9 @@
 import React from "react";
-import {View, Text} from "react-native";
+import QuizScreen from "./src/screens/quizScreen/Quiz";
 
 
 export default function App() {
   return (
-    <View>
-      <Text>The quiz app</Text>
-    </View>
+    <QuizScreen />
   )
 } 
