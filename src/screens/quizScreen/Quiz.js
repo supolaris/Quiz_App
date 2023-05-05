@@ -12,25 +12,29 @@ const QuizScreen = () => {
     const renderQuestion = () => {
         return(
             <View
-
             >
                 {/* Question number render */}
                 <View
-                                style={{
-                                    //flexBasis: 'row',
-                                    flexDirection: 'row',
-                                    alignItems: 'flex-end',
-                                }}
+                style={{
+                flexDirection: 'row',
+                alignItems: 'flex-end',
+                marginTop: 20,
+                }}
                 >
                 <Text
                 style={{
-                    fontSize: 20, color: COLORS.white, opacity: 0.6, marginRight: 2
+                    fontSize: 20,
+                    color: COLORS.white,
+                    opacity: 0.6,
+                    marginRight: 2
                 }}
                 >
                     {currentQuestionIndex+1}</Text>
                 <Text
                 style={{
-                    fontSize: 18, color: COLORS.white, opacity: 0.6
+                    fontSize: 18,
+                    color: COLORS.white,
+                    opacity: 0.6
                 }}
                 >
                     {allQuestions.length}</Text>
@@ -43,7 +47,8 @@ const QuizScreen = () => {
                     <Text
                     style={{
                         fontSize: 25,
-                        color: COLORS.white
+                        color: COLORS.white,
+                        marginTop: 5,
                     }}
                     >
                         {allQuestions[currentQuestionIndex]?.question}</Text>
@@ -52,6 +57,11 @@ const QuizScreen = () => {
 
             </View>
             
+        )
+    }
+    const renderOption = () => {
+        return (
+            <View></View>
         )
     }
 
