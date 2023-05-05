@@ -1,10 +1,62 @@
 import { View, Text, SafeAreaView, StatusBar, Image } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import { COLORS, SIZES } from '../../components/theme';
 import { data } from '../../../assets/data/QuizData';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const QuizScreen = () => {
+
+    const allQuestions = data;
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+    const renderQuestion = () => {
+        return(
+            <View
+
+            >
+                {/* Question number render */}
+                <View
+                                style={{
+                                    //flexBasis: 'row',
+                                    flexDirection: 'row',
+                                    alignItems: 'flex-end',
+                                }}
+                >
+                <Text
+                style={{
+                    fontSize: 20, color: COLORS.white, opacity: 0.6, marginRight: 2
+                }}
+                >
+                    {currentQuestionIndex+1}</Text>
+                <Text
+                style={{
+                    fontSize: 18, color: COLORS.white, opacity: 0.6
+                }}
+                >
+                    {allQuestions.length}</Text>
+
+                </View>
+
+
+                {/* Question */}
+                <View>
+                    <Text
+                    style={{
+                        fontSize: 25,
+                        color: COLORS.white
+                    }}
+                    >
+                        {allQuestions[currentQuestionIndex]?.question}</Text>
+                </View>
+                
+
+            </View>
+            
+        )
+    }
+
+
+
   return (
     <SafeAreaView
     style={{
@@ -30,6 +82,8 @@ const QuizScreen = () => {
             {/* question */}
 
             {/* options */}
+            {renderQuestion()}
+            
 
             {/* next button */}
 
