@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StatusBar, Image } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity } from 'react-native';
 import React, {useState} from 'react';
 import { COLORS, SIZES } from '../../components/theme';
 import { data } from '../../../assets/data/QuizData';
@@ -61,7 +61,22 @@ const QuizScreen = () => {
     }
     const renderOption = () => {
         return (
-            <View></View>
+            <View>
+                {
+                    allQuestions[currentQuestionIndex]?.options.map(option => {
+                        <TouchableOpacity
+                        key={option}
+                        style={{
+                            borderWidth: 3, borderColor: COLORS.white
+                        }}
+                        >
+                            <Text
+                            style={{fontSize: 20, color: COLORS.white}}
+                            >{option}</Text>
+                        </TouchableOpacity>
+                    })
+                }
+            </View>
         )
     }
 
@@ -90,9 +105,12 @@ const QuizScreen = () => {
             {/* progress bar */}
 
             {/* question */}
+            {renderQuestion()}
 
             {/* options */}
-            {renderQuestion()}
+            <View>
+            {renderOption()}
+            </View>
             
 
             {/* next button */}
