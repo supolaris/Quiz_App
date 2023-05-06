@@ -67,7 +67,7 @@ const QuizScreen = () => {
     {/* validate answer */}
     const validateAnswer = (selectedOption) => {
         let correct_option = allQuestions[currentQuestionIndex]['correct_option'];
-        currentOptionSelected(selectedOption);
+        setCurrentOptionSelected(selectedOption);
         setCorrectOption(correct_option);
         setIsOptionsDisable(true);
         if(selectedOption == correct_option) {
@@ -84,7 +84,7 @@ const QuizScreen = () => {
             {
               allQuestions[currentQuestionIndex]?.options.map(option => (
                 <TouchableOpacity
-                onPress={validateAnswer(option)}
+                onPress={() => validateAnswer(option)}
                 key={option}
                 style={{
                   height: 60,
@@ -111,11 +111,11 @@ const QuizScreen = () => {
                         <View
                         style={{
                             justifyContent: 'center',
-                            alignContent: 'center',
+                            alignItems: 'center',
                             width: 30, 
                             height: 30,
                             borderRadius: 30/2,
-                            backgroundColor: COLORS.error,
+                            backgroundColor: COLORS.success,
                         }}
                         >
                             <MaterialCommunityIcons name="check"
@@ -131,7 +131,7 @@ const QuizScreen = () => {
                         <View
                         style={{
                             justifyContent: 'center',
-                            alignContent: 'center',
+                            alignItems: 'center',
                             width: 30, 
                             height: 30,
                             borderRadius: 30/2,
@@ -147,7 +147,7 @@ const QuizScreen = () => {
 
                         </View>
 
-                    ) : null
+                    ): null
 
                   }
                 </TouchableOpacity>
