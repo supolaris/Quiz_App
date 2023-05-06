@@ -59,26 +59,39 @@ const QuizScreen = () => {
             
         )
     }
-    const renderOption = () => {
-        return (
-            <View>
-                {
-                    allQuestions[currentQuestionIndex]?.options.map(option => {
-                        <TouchableOpacity
-                        key={option}
-                        style={{
-                            borderWidth: 3, borderColor: COLORS.white
-                        }}
-                        >
-                            <Text
-                            style={{fontSize: 20, color: COLORS.white}}
-                            >{option}</Text>
-                        </TouchableOpacity>
-                    })
-                }
-            </View>
+    const renderOptions = () => {
+        return(
+          <View>
+            {
+              allQuestions[currentQuestionIndex]?.options.map(option => (
+                <TouchableOpacity
+                key={option}
+                style={{
+                  height: 60,
+                  borderWidth: 2,
+                  borderColor: COLORS.secondry+ '40',
+                  borderRadius: 20,
+                  backgroundColor: COLORS.secondry+'20',
+                  paddingHorizontal: 20,
+                  marginVertical: 10,
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+    
+                  
+                }}
+                >
+                  <Text
+                  style={{fontSize: 20, color: COLORS.white}}
+                  >{option}</Text>
+                </TouchableOpacity>
+                
+                ))
+            }
+          </View>
         )
-    }
+    
+      }
 
 
 
@@ -108,10 +121,8 @@ const QuizScreen = () => {
             {renderQuestion()}
 
             {/* options */}
-            <View>
-            {renderOption()}
-            </View>
-            
+
+            {renderOptions()}
 
             {/* next button */}
 
