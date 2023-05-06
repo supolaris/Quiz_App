@@ -8,6 +8,10 @@ const QuizScreen = () => {
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [currentOptionSelected, setCurrentOptionSelected] = useState(null);
+    const [correctOption, setCorrectOption] = useState(null);
+    const [isOptionsDisabled, setIsOptionsDisable] = useState(false);
+    const [score, setScore] = useState(0);
 
     const renderQuestion = () => {
         return(
@@ -59,12 +63,28 @@ const QuizScreen = () => {
             
         )
     }
+
+    {/* validate answer */}
+    const validateAnswer = (selectedOption) => {
+        let correct_option = allQuestions[currentQuestionIndex]['correct_option'];
+        currentOptionSelected(selectedOption);
+        setCorrectOption(correct_option);
+        setIsOptionsDisable(true);
+        if(selectedOption == correct_option) {
+            //set score
+            setScore(score+1);
+        }
+        //show next button
+    }
+
+
     const renderOptions = () => {
         return(
           <View>
             {
               allQuestions[currentQuestionIndex]?.options.map(option => (
                 <TouchableOpacity
+                onPress={validateAnswer(option)}
                 key={option}
                 style={{
                   height: 60,
@@ -84,6 +104,52 @@ const QuizScreen = () => {
                   <Text
                   style={{fontSize: 20, color: COLORS.white}}
                   >{option}</Text>
+
+                  {/* show check or cross icon based on correct answer */}
+                  {
+                    option==correctOption ? (
+                        <View
+                        style={{
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            width: 30, 
+                            height: 30,
+                            borderRadius: 30/2,
+                            backgroundColor: COLORS.error,
+                        }}
+                        >
+                            <MaterialCommunityIcons name="check"
+                            style={{
+                                color: COLORS.white,
+                                fontSize: 20
+                            }}
+                            />
+
+                        </View>
+
+                    ): option == currentOptionSelected ? (
+                        <View
+                        style={{
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            width: 30, 
+                            height: 30,
+                            borderRadius: 30/2,
+                            backgroundColor: COLORS.error,
+                        }}
+                        >
+                            <MaterialCommunityIcons name="close"
+                            style={{
+                                color: COLORS.white,
+                                fontSize: 20
+                            }}
+                            />
+
+                        </View>
+
+                    ) : null
+
+                  }
                 </TouchableOpacity>
                 
                 ))
