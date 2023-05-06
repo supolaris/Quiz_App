@@ -89,9 +89,20 @@ const QuizScreen = () => {
                 style={{
                   height: 60,
                   borderWidth: 2,
-                  borderColor: COLORS.secondry+ '40',
+
+                  borderColor: option == correctOption ?
+                  COLORS.success
+                  : option == currentOptionSelected ?
+                  COLORS.error
+                  : COLORS.secondary+'40',
+
                   borderRadius: 20,
-                  backgroundColor: COLORS.secondry+'20',
+                  backgroundColor: option == correctOption ?
+                  COLORS.success+ '20'
+                  : option == currentOptionSelected ?
+                  COLORS.error+ '20'
+                  : COLORS.secondary+'20',
+                  
                   paddingHorizontal: 20,
                   marginVertical: 10,
                   flexDirection: 'row',
