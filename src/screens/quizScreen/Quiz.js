@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal } from 'react-native';
 import React, {useState} from 'react';
 import { COLORS, SIZES } from '../../components/theme';
 import { data } from '../../../assets/data/QuizData';
@@ -12,6 +12,8 @@ const QuizScreen = () => {
     const [correctOption, setCorrectOption] = useState(null);
     const [isOptionsDisabled, setIsOptionsDisable] = useState(false);
     const [score, setScore] = useState(0);
+    const [showNextButton, setShowNextButton] = useState(false);
+    const [showScoreModal, setShowScoreModal] = useState(false);
 
     const renderQuestion = () => {
         return(
@@ -75,6 +77,7 @@ const QuizScreen = () => {
             setScore(score+1);
         }
         //show next button
+        setShowNextButton(true);
     }
 
 
@@ -85,6 +88,7 @@ const QuizScreen = () => {
               allQuestions[currentQuestionIndex]?.options.map(option => (
                 <TouchableOpacity
                 onPress={() => validateAnswer(option)}
+                disable={isOptionsDisabled}
                 key={option}
                 style={{
                   height: 60,
@@ -170,6 +174,39 @@ const QuizScreen = () => {
     
       }
 
+      const handleNext = () => {
+        if(currentQuestionIndex == allQuestions.length-1){
+            //last question
+            // show score modal
+            setShowScoreModal(true);
+        }else {
+            setCurrentQuestionIndex(currentQuestionIndex+1);
+            setCurrentOptionSelected(null);
+            setCorrectOption(null);
+            setIsOptionsDisable(false);
+            setShowNextButton(false);
+
+        }
+      }
+
+      const renderNextButton = () => {
+        if(showNextButton){
+            return (
+                <TouchableOpacity
+                onPress={handleNext}
+                style={{margin: 20, padding: 10, backgroundColor: COLORS.accent, borderRadius: 20, borderWidth: 1, borderColor: COLORS.secondary }}
+                >
+                    <Text
+                    style={{fontSize: 20, textAlign: 'center', color: COLORS.white}}
+                    >Next</Text>
+                </TouchableOpacity>
+            )
+        }else {
+            return null;
+        }
+        
+      }
+
 
 
   return (
@@ -202,6 +239,66 @@ const QuizScreen = () => {
             {renderOptions()}
 
             {/* next button */}
+            {renderNextButton()}
+
+            {/* score modal */}
+            <Modal
+            animationType='slidie'
+            transparent= {true}
+            visible={true}
+            >
+                <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.primmary,
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+                >
+                    <View
+                    style={{
+                        backgroundColor: COLORS.white,
+                        width: '90%',
+                        borderRadius: 20,
+                        padding: 20,
+                        alignItems: 'center'
+                    }}
+                    >
+                        <Text
+                        style={{
+                            fontSize: 20,
+                            fontWeight: 'bold'
+                        }}
+                        >{score>(allQuestions.length/2) ? 'Congratulations!' : 'Opps!'}</Text>
+                        <View
+                        style={{
+                            flexDirection: 'row',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginVertical: 20
+                        }}
+                        >
+                            <Text
+                            style={{
+                                fontSize: 20,
+                                color: score> (allQuestions.length/2)? COLORS.score : COLORS.error
+
+                            }}
+                            >{score}</Text>
+                            <Text
+                            style={{
+                                fontSize: 20,
+                                color: COLORS.black
+                            }}
+                            >/{allQuestions.length}</Text>
+
+                        </View>
+                    </View>
+                    
+                </View>
+            </Modal>
+            
+            
 
             {/* background image */}
             <Image 

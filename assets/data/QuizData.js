@@ -6,7 +6,7 @@ export const data = [
     },
     {
         question: 'Which one is the capital of Pakistan?',
-        options: ['Islamabad', 'Lahore', 'Karachi', 'Quetta'],
+        options: ['Karachi', 'Lahore', 'Islamabad', 'Quetta'],
         correct_option: 'Islamabad'
     },
 ]
