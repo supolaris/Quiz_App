@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated } from 'react-native';
 import React, {useState} from 'react';
 import { COLORS, SIZES } from '../../components/theme';
 import { data } from '../../../assets/data/QuizData';
@@ -185,8 +185,12 @@ const QuizScreen = () => {
             setCorrectOption(null);
             setIsOptionsDisable(false);
             setShowNextButton(false);
-
         }
+        Animated.timing(progress,{
+            toValue: currentQuestionIndex+1,
+            duration: 1000,
+            useNativeDriver: false
+        }).start();
       }
 
       const renderNextButton = () => {
@@ -205,6 +209,57 @@ const QuizScreen = () => {
             return null;
         }
         
+      }
+
+      const retryQuiz = () => {
+        setShowScoreModal(false);
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        setCurrentOptionSelected(null);
+        setCorrectOption(null);
+        setIsOptionsDisable(false);
+        setShowNextButton(false);
+        Animated.timing(progress, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: false
+        }).start();
+  
+
+      }
+
+      const [progress, setProgress] = useState(new Animated.Value(0));
+      const progressAnim = progress.interpolate({
+        inputRange: [0, allQuestions.length],
+        outputRange: ['0%', '100%']
+      })
+
+      const renderProgressBar = () => {
+        return (
+            <View
+            style={{
+                width: '100%',
+                height: 20,
+                borderRadius: 20,
+                backgroundColor: '#000020',
+                marginVertical: 40
+            }}
+            >
+                <Animated.View
+                style={[{
+                    height: 20,
+                    borderRadius: 20,
+                    backgroundColor: COLORS.accent
+                }, {
+                    width: progressAnim
+                }]}
+                >
+
+                </Animated.View>
+
+            </View>
+        )
+
       }
 
 
@@ -230,6 +285,7 @@ const QuizScreen = () => {
         >
 
             {/* progress bar */}
+            {renderProgressBar()}
 
             {/* question */}
             {renderQuestion()}
@@ -245,7 +301,7 @@ const QuizScreen = () => {
             <Modal
             animationType='slidie'
             transparent= {true}
-            visible={true}
+            visible={showScoreModal}
             >
                 <View
                 style={{
@@ -291,8 +347,21 @@ const QuizScreen = () => {
                                 color: COLORS.black
                             }}
                             >/{allQuestions.length}</Text>
+                            
 
                         </View>
+                        <TouchableOpacity
+                        onPress={retryQuiz}
+                        style={{
+                            backgroundColor: COLORS.accent, padding: 10, width: '60%', borderRadius: 10, alignItems: 'center'
+                        }}
+                        >
+                             <Text
+                             style={{
+                                fontSize: 18, color: COLORS.white
+                             }}
+                             >Retry Quiz</Text>
+                        </TouchableOpacity>
                     </View>
                     
                 </View>
