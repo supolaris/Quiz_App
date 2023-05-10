@@ -19,3 +19,5 @@ npm install @react-navigation/native
 ```bash
 npm install react-native-screens react-native-safe-area-context
 ```
+
+#User Interface of the app
