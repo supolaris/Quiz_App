@@ -19,5 +19,13 @@ npm install @react-navigation/native
 ```bash
 npm install react-native-screens react-native-safe-area-context
 ```
-
-#User Interface of the app
+Stact Navigation:
+```bash
+npm install @react-navigation/stack
+```
+```bash
+npm install react-native-gesture-handler
+```
+```bash
+npm install @react-native-masked-view/masked-view
+```

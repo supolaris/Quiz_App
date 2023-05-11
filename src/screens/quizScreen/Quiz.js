@@ -14,6 +14,7 @@ const QuizScreen = () => {
     const [score, setScore] = useState(0);
     const [showNextButton, setShowNextButton] = useState(false);
     const [showScoreModal, setShowScoreModal] = useState(false);
+    const [progress, setProgress] = useState(new Animated.Value(0));
 
     const renderQuestion = () => {
         return(
@@ -86,6 +87,7 @@ const QuizScreen = () => {
           <View>
             {
               allQuestions[currentQuestionIndex]?.options.map(option => (
+
                 <TouchableOpacity
                 onPress={() => validateAnswer(option)}
                 disable={isOptionsDisabled}
@@ -95,17 +97,17 @@ const QuizScreen = () => {
                   borderWidth: 2,
 
                   borderColor: option == correctOption ?
-                  COLORS.success
+                  COLORS.border
                   : option == currentOptionSelected ?
                   COLORS.error
-                  : COLORS.secondary+'40',
+                  : COLORS.border+'70',
 
                   borderRadius: 20,
                   backgroundColor: option == correctOption ?
-                  COLORS.success+ '20'
+                  COLORS.success
                   : option == currentOptionSelected ?
-                  COLORS.error+ '20'
-                  : COLORS.secondary+'20',
+                  COLORS.error
+                  : COLORS.secondary,
                   
                   paddingHorizontal: 20,
                   marginVertical: 10,
@@ -198,7 +200,13 @@ const QuizScreen = () => {
             return (
                 <TouchableOpacity
                 onPress={handleNext}
-                style={{margin: 20, padding: 10, backgroundColor: COLORS.accent, borderRadius: 20, borderWidth: 1, borderColor: COLORS.secondary }}
+                style={{margin: 20,
+                    padding: 10,
+                    backgroundColor: COLORS.accent,
+                    borderRadius: 20,
+                    borderWidth: 1,
+                    borderColor: COLORS.gray
+                }}
                 >
                     <Text
                     style={{fontSize: 20, textAlign: 'center', color: COLORS.white}}
@@ -228,7 +236,6 @@ const QuizScreen = () => {
 
       }
 
-      const [progress, setProgress] = useState(new Animated.Value(0));
       const progressAnim = progress.interpolate({
         inputRange: [0, allQuestions.length],
         outputRange: ['0%', '100%']
@@ -241,7 +248,7 @@ const QuizScreen = () => {
                 width: '100%',
                 height: 20,
                 borderRadius: 20,
-                backgroundColor: '#000020',
+                backgroundColor: COLORS.gray,
                 marginVertical: 40
             }}
             >
@@ -249,7 +256,7 @@ const QuizScreen = () => {
                 style={[{
                     height: 20,
                     borderRadius: 20,
-                    backgroundColor: COLORS.accent
+                    backgroundColor: "#FFC3A0"
                 }, {
                     width: progressAnim
                 }]}
@@ -259,10 +266,7 @@ const QuizScreen = () => {
 
             </View>
         )
-
-      }
-
-
+    }
 
   return (
     <SafeAreaView
@@ -272,7 +276,7 @@ const QuizScreen = () => {
     >
         <StatusBar
             barStyle='light-content'
-            backgroundColor={COLORS.primmary}
+            backgroundColor={COLORS.gray}
             />
         <View
         style={{
