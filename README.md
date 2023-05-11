@@ -4,6 +4,10 @@
 
 #Dependencies to be installed
 
+Yarn Installation:
+```bash
+npm install --global yarn
+```
 React native vector icons:
 ```bash
 npm install --save react-native-vector-icons
@@ -19,7 +23,7 @@ npm install @react-navigation/native
 ```bash
 npm install react-native-screens react-native-safe-area-context
 ```
-Stact Navigation:
+Stack Navigation:
 ```bash
 npm install @react-navigation/stack
 ```
@@ -28,4 +32,8 @@ npm install react-native-gesture-handler
 ```
 ```bash
 npm install @react-native-masked-view/masked-view
+```
+Lottie:
+```bash
+yarn add lottie-react-native
 ```

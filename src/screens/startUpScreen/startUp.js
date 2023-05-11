@@ -8,7 +8,7 @@ export default function StartUpScreen() {
 
     const navigation = useNavigation();
     const onButtonPress = () => {
-        navigation.navigate('Quiz')
+        navigation.navigate('SignUp')
     }
 
     return(

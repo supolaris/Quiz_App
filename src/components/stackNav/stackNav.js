@@ -2,7 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import StartUpScreen from "../../screens/startUpScreen/startUp";
 import QuizScreen from "../../screens/quizScreen/Quiz";
-import { StatusBar } from "react-native/types";
+import SignUpScreen from "../../screens/signUpScreen/signUp";
 
 export default function StackNav () {
 
@@ -19,10 +19,14 @@ export default function StackNav () {
                 component={StartUpScreen}
                 />
                 <Stack.Screen 
-                
+                name="SignUp"
+                component={SignUpScreen}
+                />
+                <Stack.Screen 
                 name="Quiz"
                 component={QuizScreen}
                 />
+  
             </Stack.Navigator>
 
         </NavigationContainer>
