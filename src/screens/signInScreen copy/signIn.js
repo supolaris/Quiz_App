@@ -4,6 +4,7 @@ import { SignInStyles } from "./signInStyles";
 import { useNavigation } from "@react-navigation/native";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
+import auth from '@react-native-firebase/auth'; 
 
 
 export default function SignInScreen() {
@@ -18,8 +19,24 @@ export default function SignInScreen() {
     }
 
 
+ 
+
     const onLoginPressed = () => {
-        navigation.navigate('Quiz')
+        console.log('login pressed')
+        if (!useremail.trim() || !userPassword.trim()){
+            console.log('Enter email and password')
+        }
+        auth()
+        .signInWithEmailAndPassword(useremail, userPassword)
+        .then(() => {
+            console.log('signed in!');
+            navigation.navigate('Quiz');
+            
+            return;
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }
 
 
