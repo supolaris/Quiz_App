@@ -11,21 +11,21 @@ export default function SignInScreen() {
 
     const navigation = useNavigation();
     const [userName, setUserName] = useState();
-    const [useremail, setUserEmail] = useState();
-    const [userPassword, serUserPassword] = useState();
+    const [useremail, setUserEmail] = useState('');
+    const [userPassword, serUserPassword] = useState('');
 
     const onRegisterPressed = () => {
         navigation.navigate('SignUp')
     }
-
-
- 
 
     const onLoginPressed = () => {
         console.log('login pressed')
         if (!useremail.trim() || !userPassword.trim()){
             console.log('Enter email and password')
         }
+        // if (useremail.length == 0 || userPassword.length == 0){
+        //     console.log('Enter email and password');
+        // }
         auth()
         .signInWithEmailAndPassword(useremail, userPassword)
         .then(() => {
