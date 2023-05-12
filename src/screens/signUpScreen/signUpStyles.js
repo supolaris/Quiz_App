@@ -1,24 +1,39 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../components/theme";
 
 export const SignUpStyles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: COLORS.backgroundColor
 
     },
     title: {
-        fontSize: 20,
+        fontSize: 35,
 
     },
     description: {
-        fontSize: 16,
+        fontSize: 19,
+
+    },
+    image: {
+        width: 300,
+        height: 250
+
+    },
+    icon: {
+        marginRight: 5,
+        paddingTop: 10
 
     },
     input: {
-        padding: 10,
-        borderWidth: 1,
-        borderRadius: 10,
-        width: '60%',
+        padding: 0,
+        borderBottomWidth: 1,
+        //borderRadius: 10,
+        width: '70%',
+        //margin: 10,
+        
 
     },
     button: {
@@ -27,7 +42,7 @@ export const SignUpStyles = StyleSheet.create({
         borderColor: '#36454F',
         padding: 10,
         borderRadius: 10,
-        width: '50%',
+        width: '70%',
         backgroundColor: '#FFC3A0'
 
     },

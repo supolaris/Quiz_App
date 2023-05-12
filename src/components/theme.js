@@ -12,7 +12,8 @@ const COLORS = {
     white: "#36454F",
     background: "#252c4a",
     gray: "#252c4a",
-    border: "#36454F"
+    border: "#36454F",
+    backgroundColor: '#FFD9C2',
 }
 
 
