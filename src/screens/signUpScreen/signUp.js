@@ -6,18 +6,42 @@ import Lottie from "lottie-react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
+import auth from '@react-native-firebase/auth'; 
 
 
 export default function SignUpScreen() {
 
     const navigation = useNavigation();
     const [userName, setUserName] = useState();
-    const [useremail, setUserEmail] = useState();
-    const [userPassword, serUserPassword] = useState();
+    const [useremail, setUserEmail] = useState('');
+    const [userPassword, serUserPassword] = useState('');
+
+
 
 
     const onRegisterPressed = () => {
-        console.log('register pressed')
+        auth()
+        .createUserWithEmailAndPassword(useremail, userPassword)
+        .then(() => {
+            console.log('User account created & signed in!');
+        })
+        .catch(error => {
+            if (error.code === 'auth/email-already-in-use') {
+            console.log('That email address is already in use!');
+            }
+
+            if (error.code === 'auth/invalid-email') {
+            console.log('That email address is invalid!');
+            }
+
+            console.error(error);
+        });
+    }
+
+    const signOut = () => {
+        auth()
+        .signOut()
+        .then(() => console.log('User signed out!'));
     }
 
 
