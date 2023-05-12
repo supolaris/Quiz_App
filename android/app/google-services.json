@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269683559878",
+    "project_id": "oasistwist-86a01",
+    "storage_bucket": "oasistwist-86a01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269683559878:android:8c5e18336f3654ffe276c7",
+        "android_client_info": {
+          "package_name": "com.quiz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269683559878-q0gpsj1hm5s8voh73o9jiml9n68qmcsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLYVY1dsvYPg1h0HeFvwThGw3vavfCcD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269683559878-q0gpsj1hm5s8voh73o9jiml9n68qmcsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
