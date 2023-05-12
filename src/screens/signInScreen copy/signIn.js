@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import {View, Text, TouchableOpacity, Image, TextInput, SafeAreaView} from "react-native";
+import {View, Text, TouchableOpacity, Image, TextInput, SafeAreaView, Alert} from "react-native";
 import { SignInStyles } from "./signInStyles";
 import { useNavigation } from "@react-navigation/native";
 import Entypo from "react-native-vector-icons/Entypo";
