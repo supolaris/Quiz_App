@@ -4,12 +4,15 @@ export const startUpStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFD9C2',
-        alignItems: 'center'
+       // alignItems: 'center',
+       // flexDirection: 'column-reverse',
+        justifyContent: 'space-evenly',
+        paddingHorizontal: 15
         
     },
     image: {
         width: 450,
-        height: 400
+        height: 280
 
     },
     title: {
@@ -18,8 +21,14 @@ export const startUpStyles = StyleSheet.create({
         borderBottomWidth: 1,
         
     },
+    descripton: {
+        textAlign: 'center',
+        fontSize: 18,
+        paddingVertical: 10
+    },
     button: {
-        marginTop: 10,
+        marginTop: 1,
+       // marginLeft: -30,
         borderWidth: 1,
         borderColor: '#36454F',
         padding: 10,

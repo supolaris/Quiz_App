@@ -15,22 +15,47 @@ export default function StartUpScreen() {
         <View
         style={startUpStyles.container}
         >
-            <Image
-            style={startUpStyles.image}
-            source={require('../../../assets/images/quizStartup.png')}
-            />
-
+            <View
+            style={{alignItems: 'center'}}
+            >
             <Text
             style={startUpStyles.title}
             >ThinkFast</Text>
-            <TouchableOpacity
+            <Text
+            style={startUpStyles.descripton}
+            >We help to excel the Intelligence quotient with the help of multiple choice questions</Text>
+                                 <TouchableOpacity
             onPress={onButtonPress}
             style={startUpStyles.button}
             >
                 <Text
                 style={startUpStyles.buttonText}
                 >Get Started</Text>
-            </TouchableOpacity>   
+            </TouchableOpacity> 
+ 
+  
+
+            </View>
+            <View
+            style={{alignItems: 'center'}}
+            >
+            <Image
+            style={startUpStyles.image}
+            source={require('../../../assets/images/quizStartup.png')}
+            />
+ 
+
+            </View>
+
+
+
+
+
+
+  
+
+
+   
         </View>
     )
 }

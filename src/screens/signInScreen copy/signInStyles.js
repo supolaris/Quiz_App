@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../components/theme";
 
 
-export const SignUpStyles = StyleSheet.create({
+export const SignInStyles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',

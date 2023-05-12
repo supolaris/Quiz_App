@@ -1,34 +1,32 @@
 import React, { useState} from "react";
 import {View, Text, TouchableOpacity, Image, TextInput, SafeAreaView} from "react-native";
-import { SignUpStyles } from "./signUpStyles";
+import { SignInStyles } from "./signInStyles";
 import { useNavigation } from "@react-navigation/native";
-import Lottie from "lottie-react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
 
 
-export default function SignUpScreen() {
+export default function SignInScreen() {
 
     const navigation = useNavigation();
     const [userName, setUserName] = useState();
     const [useremail, setUserEmail] = useState();
     const [userPassword, serUserPassword] = useState();
 
-
     const onRegisterPressed = () => {
-        console.log('register pressed')
+        navigation.navigate('SignUp')
     }
 
 
-    const onSignInPressed = () => {
-        navigation.navigate('SignIn')
+    const onLoginPressed = () => {
+        navigation.navigate('Quiz')
     }
+
 
 
     return(
         <SafeAreaView
-        style={SignUpStyles.container}
+        style={SignInStyles.container}
         >
             {/* <Text
             style={SignUpStyles.title}
@@ -37,36 +35,19 @@ export default function SignUpScreen() {
             style={SignUpStyles.description}
             >Sign up now and unlock access!</Text> */}
             <Image
-            style={SignUpStyles.image}
+            style={SignInStyles.image}
             source={require('../../../assets/images/Mobile-login.png')}
             />
-
-             <View
-                style={{flexDirection: 'row', paddingVertical: 10}}
-                >
-                    <AntDesign 
-                    style={SignUpStyles.icon}
-                    name="user"
-                    size={25}
-                    color="#666"
-                    />
-                    <TextInput 
-                    style={SignUpStyles.input}
-                    placeholder="Enter your name"
-                    onChangeText={(value) => setUserName(value)}
-                    /> 
-
-                </View>
                 <View
                  style={{flexDirection: 'row', paddingVertical: 10}}
                 >
                     <Entypo
-                    style={SignUpStyles.icon} 
+                    style={SignInStyles.icon} 
                     name="email"
                     size={25}
                     color="#666"/>    
                     <TextInput 
-                    style={SignUpStyles.input}
+                    style={SignInStyles.input}
                     placeholder="Enter your email"
                     onChangeText={(value) =>  setUserEmail(value)}
                     />
@@ -75,31 +56,31 @@ export default function SignUpScreen() {
                 style={{flexDirection: 'row', paddingVertical: 10}}
                 >
                     <Feather 
-                    style={SignUpStyles.icon}
+                    style={SignInStyles.icon}
                     name="lock"
                     size={25}
                     color="#666"/>
                     <TextInput 
-                    style={SignUpStyles.input}
+                    style={SignInStyles.input}
                     placeholder="Enter your password"
                     onChangeText={(value) => serUserPassword(value)}
                     />
             </View>
             <TouchableOpacity
-            onPress={onRegisterPressed}
-            style={SignUpStyles.button}
+            onPress={onLoginPressed}
+            style={SignInStyles.button}
             >
                 <Text
-                style={SignUpStyles.buttonText}
-                >Register</Text>
+                style={SignInStyles.buttonText}
+                >Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
-            onPress={onSignInPressed}
-            style={SignUpStyles.button}
+            onPress={onRegisterPressed}
+            style={SignInStyles.button}
             >
                 <Text
-                style={SignUpStyles.buttonText}
-                >Sign in</Text>
+                style={SignInStyles.buttonText}
+                >Sign up</Text>
             </TouchableOpacity>   
  
         </SafeAreaView>
