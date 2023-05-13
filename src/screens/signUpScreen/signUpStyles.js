@@ -19,7 +19,6 @@ export const SignUpStyles = StyleSheet.create({
 
     },
     image: {
-        
         width: 350,
         height: 310
 

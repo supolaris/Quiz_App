@@ -24,7 +24,7 @@ export default function StartUpScreen() {
             <Text
             style={startUpStyles.descripton}
             >We help to excel the Intelligence quotient with the help of multiple choice questions</Text>
-                                 <TouchableOpacity
+            <TouchableOpacity
             onPress={onButtonPress}
             style={startUpStyles.button}
             >

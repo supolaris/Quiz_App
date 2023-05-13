@@ -62,9 +62,8 @@ export default function SignUpScreen() {
             >Sign up now and unlock access!</Text> */}
             <Image
             style={SignUpStyles.image}
-            source={require('../../../assets/images/Mobile-login.png')}
+            source={require('../../../assets/images/s.png')}
             />
-
              <View
                 style={{flexDirection: 'row', paddingVertical: 10}}
                 >
