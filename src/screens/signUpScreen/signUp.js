@@ -61,6 +61,7 @@ export default function SignUpScreen() {
             style={SignUpStyles.description}
             >Sign up now and unlock access!</Text> */}
             <Image
+            resizeMode="contain"
             style={SignUpStyles.image}
             source={require('../../../assets/images/s.png')}
             />

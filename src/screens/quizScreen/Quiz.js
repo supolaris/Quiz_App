@@ -36,7 +36,7 @@ const QuizScreen = () => {
                     marginRight: 2
                 }}
                 >
-                    {currentQuestionIndex+1}</Text>
+                    {currentQuestionIndex+1+ '/'}</Text>
                 <Text
                 style={{
                     fontSize: 18,

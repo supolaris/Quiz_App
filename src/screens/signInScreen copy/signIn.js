@@ -21,7 +21,7 @@ export default function SignInScreen() {
     const onLoginPressed = () => {
         console.log('login pressed')
         if (!useremail.trim() || !userPassword.trim()){
-            console.log('Enter email and password')
+            console.warn('Enter email and password')
         }
         // if (useremail.length == 0 || userPassword.length == 0){
         //     console.log('Enter email and password');
@@ -52,6 +52,7 @@ export default function SignInScreen() {
             style={SignUpStyles.description}
             >Sign up now and unlock access!</Text> */}
             <Image
+            resizeMode="contain"
             style={SignInStyles.image}
             source={require('../../../assets/images/Mobile-login.png')}
             />
@@ -79,6 +80,7 @@ export default function SignInScreen() {
                     color="#666"/>
                     <TextInput 
                     style={SignInStyles.input}
+                    secureTextEntry
                     placeholder="Enter your password"
                     onChangeText={(value) => serUserPassword(value)}
                     />

@@ -4,6 +4,7 @@ import StartUpScreen from "../../screens/startUpScreen/startUp";
 import QuizScreen from "../../screens/quizScreen/Quiz";
 import SignUpScreen from "../../screens/signUpScreen/signUp";
 import SignInScreen from "../../screens/signInScreen copy/signIn";
+import SettingScreen from "../../screens/settiingScreen/setting";
 
 export default function StackNav () {
 
@@ -12,6 +13,10 @@ export default function StackNav () {
     return(
         <NavigationContainer>
             <Stack.Navigator>
+            <Stack.Screen 
+                name="Setting"
+                component={SettingScreen}
+                />
                 <Stack.Screen 
                 options={{
                     headerShown: false
@@ -37,6 +42,7 @@ export default function StackNav () {
                 name="Quiz"
                 component={QuizScreen}
                 />
+                
   
             </Stack.Navigator>
 
