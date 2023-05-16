@@ -1,7 +1,9 @@
 # Quiz_App
  quiz app
 
+Steps to follow:
 
+Step 1:
 #Dependencies to be installed
 
 Yarn Installation:
