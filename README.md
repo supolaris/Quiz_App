@@ -1,5 +1,5 @@
 # Quiz_App
- quiz app
+ This repository contains the code for qizz app in react native
 
 Steps to follow:
 
