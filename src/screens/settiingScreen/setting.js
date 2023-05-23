@@ -34,8 +34,34 @@ export default function SettingScreen() {
     <SafeAreaView
     style={settingStyles.container}
     >
-    <ScrollView>
-      <View>Setting</View>
+    <ScrollView style={{padding: 20}}>
+      <View
+      style={settingStyles.header}
+      >
+        <Text
+        tyle={settingStyles.title}
+        >Settings</Text>
+        <Text
+        style={settingStyles.subtitle}
+        >Update your preferences here</Text>
+      </View>
+
+      {section.map(({header, items}) => (
+        <View
+        style={settingStyles.section} key={header}
+        >
+          <View 
+          style={settingStyles.headerSection}>
+            <Text
+            style={settingStyles.headertext}
+            >{header}</Text>
+          </View>
+
+        </View>
+      ))}
+
+
+
     </ScrollView>
     </SafeAreaView>
   )
