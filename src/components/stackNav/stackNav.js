@@ -14,6 +14,9 @@ export default function StackNav () {
         <NavigationContainer>
             <Stack.Navigator>
             <Stack.Screen 
+            options={{
+                headerShown: false
+            }}        
                 name="Setting"
                 component={SettingScreen}
                 />

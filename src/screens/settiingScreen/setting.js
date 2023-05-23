@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View, SafeAreaView, ScrollView} from "react-native";
+import {Text, View, SafeAreaView, ScrollView, TouchableOpacity} from "react-native";
 import { settingStyles } from "./settingStyles";
 
 
@@ -7,23 +7,23 @@ const section = [
   {
     header: 'preferences',
     items: [
-      {id: 'language', icon: 'globe', labe: 'language', type: 'select'},
-      {id: 'dardmode', icon: 'moon', labe: 'dark-mode', type: 'toogle'},
-      {id: 'wifi', icon: 'wifi', labe: 'Use Wi-Fi', type: 'toogle'},
+      {id: 'language', icon: 'globe', label: 'language', type: 'select'},
+      {id: 'dardmode', icon: 'moon', label: 'dark-mode', type: 'toogle'},
+      {id: 'wifi', icon: 'wifi', label: 'Use Wi-Fi', type: 'toogle'},
     ]
   },
   {
     header: 'help',
     items: [
-      {id: 'bug', icon: 'flag', labe: 'report bug', type: 'link'},
-      {id: 'contant', icon: 'main', labe: 'contact us', type: 'link'},
+      {id: 'bug', icon: 'flag', label: 'report bug', type: 'link'},
+      {id: 'contant', icon: 'main', label: 'contact us', type: 'link'},
     ]
   },
   {
     header: 'content',
     items: [
-      {id: 'save', icon: 'save', labe: 'saved', type: 'link'},
-      {id: 'dowbload', icon: 'dowbload', labe: 'downloads', type: 'link'},
+      {id: 'save', icon: 'save', label: 'saved', type: 'link'},
+      {id: 'dowbload', icon: 'dowbload', label: 'downloads', type: 'link'},
     ]
   },
 
@@ -34,12 +34,12 @@ export default function SettingScreen() {
     <SafeAreaView
     style={settingStyles.container}
     >
-    <ScrollView style={{padding: 20}}>
+    <ScrollView >
       <View
       style={settingStyles.header}
       >
         <Text
-        tyle={settingStyles.title}
+        style={settingStyles.title}
         >Settings</Text>
         <Text
         style={settingStyles.subtitle}
@@ -55,6 +55,27 @@ export default function SettingScreen() {
             <Text
             style={settingStyles.headertext}
             >{header}</Text>
+          </View>
+
+          <View
+          style={settingStyles.labelsection}
+          >
+            {items.map(({label, id, type, icon}) => (
+              <View
+              style={settingStyles.label} key={id}
+              >
+                <TouchableOpacity
+                onPress={() => {
+                  //onpress handle
+                }}
+                >
+                  <Text
+                  style={settingStyles.labeltext}
+                  >{label}</Text>
+                </TouchableOpacity>
+              </View>
+            ))}
+
           </View>
 
         </View>

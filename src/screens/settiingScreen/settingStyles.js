@@ -7,7 +7,7 @@ export const settingStyles = StyleSheet.create({
         backgroundColor: COLORS.backgroundColor,
     },
     header: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 30,
         marginBottom: 10,
 
     },
@@ -18,16 +18,25 @@ export const settingStyles = StyleSheet.create({
 
     },
     subtitle: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: '500'
     },
     section: {
+        paddingHorizontal: 10,
+        paddingVertical: 5,
 
     },
     headerSection: {
+        paddingVertical: 5,
+        paddingHorizontal: 25
+
 
     },
     headertext: {
+        fontSize: 18,
+        textTransform: 'uppercase',
+        letterSpacing: 1.2
+
 
     },
     image: {
