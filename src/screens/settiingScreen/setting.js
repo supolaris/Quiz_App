@@ -60,9 +60,10 @@ export default function SettingScreen() {
           <View
           style={settingStyles.labelsection}
           >
-            {items.map(({label, id, type, icon}) => (
+            {items.map(({label, id, type, icon}, index) => (
               <View
-              style={settingStyles.label} key={id}
+              style={[settingStyles.label,
+                index == 0 && {borderTopWidth: 0}, ]} key={id}
               >
                 <TouchableOpacity
                 onPress={() => {
