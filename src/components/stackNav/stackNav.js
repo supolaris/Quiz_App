@@ -13,13 +13,20 @@ export default function StackNav () {
     return(
         <NavigationContainer>
             <Stack.Navigator>
+
             <Stack.Screen 
             options={{
                 headerShown: false
             }}        
                 name="Setting"
                 component={SettingScreen}
+                />    
+
+            <Stack.Screen 
+                name="Quiz"
+                component={QuizScreen}
                 />
+
                 <Stack.Screen 
                 options={{
                     headerShown: false
@@ -41,10 +48,8 @@ export default function StackNav () {
                 name="SignIn"
                 component={SignInScreen}
                 />
-                <Stack.Screen 
-                name="Quiz"
-                component={QuizScreen}
-                />
+
+
                 
   
             </Stack.Navigator>

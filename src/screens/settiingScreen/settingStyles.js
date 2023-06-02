@@ -43,5 +43,11 @@ export const settingStyles = StyleSheet.create({
         width: 60,
         height: 60,
         padding: 0
+    },
+    labeltext: {
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 15,
+        margin: 4
     }
 })
