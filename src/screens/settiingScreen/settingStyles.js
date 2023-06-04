@@ -45,9 +45,13 @@ export const settingStyles = StyleSheet.create({
         padding: 0
     },
     labeltext: {
-        borderWidth: 1,
-        borderRadius: 10,
-        padding: 15,
-        margin: 4
-    }
+
+    },
+    label: {
+        paddingLeft: 24, 
+        borderTopWidth: 0.5,
+        //borderColor: '#e3e3e3',
+        backgroundColor: ''
+
+    },
 })
