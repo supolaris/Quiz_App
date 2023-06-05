@@ -45,18 +45,26 @@ export const settingStyles = StyleSheet.create({
         padding: 0
     },
     labeltext: {
-        justifyContent: 'flex-start',
-        alignItems: 'center',
+        
         height: 50,
         flexDirection: 'row',
-        paddingRight: 24
+        paddingRight: 24,
 
     },
     label: {
+
         paddingLeft: 24, 
         borderTopWidth: 0.5,
         //borderColor: '#e3e3e3',
         backgroundColor: COLORS.secondary
+
+    },
+    row: {
+        flexDirection: 'row',
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        paddingRight: 24
 
     },
 })

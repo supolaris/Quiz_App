@@ -1,6 +1,7 @@
 import React from "react";
 import {Text, View, SafeAreaView, ScrollView, TouchableOpacity} from "react-native";
 import { settingStyles } from "./settingStyles";
+import FeatherIcon from "react-native-vector-icons/Feather"
 
 
 const section = [
@@ -70,9 +71,21 @@ export default function SettingScreen() {
                   //onpress handle
                 }}
                 >
+                  <View 
+                  style={settingStyles.row}
+                  >
+                    <FeatherIcon 
+                    name={icon}
+                    color="white"
+                    size={22}
+                    style={{marginRight: 12}}
+                    />
                   <Text
                   style={settingStyles.labeltext}
                   >{label}</Text>
+
+                  </View>
+
                 </TouchableOpacity>
               </View>
             ))}
