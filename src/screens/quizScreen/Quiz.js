@@ -3,8 +3,16 @@ import React, {useState} from 'react';
 import { COLORS, SIZES } from '../../components/theme';
 import { data } from '../../../assets/data/QuizData';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import SettingScreen from '../settiingScreen/setting';
+import { useNavigation } from '@react-navigation/native';
 
 const QuizScreen = () => {
+
+    const navigation = useNavigation();
+
+    const onSettingPressed = () => {
+        navigation.navigate('Setting');
+    }
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -365,6 +373,18 @@ const QuizScreen = () => {
                                 fontSize: 18, color: COLORS.white
                              }}
                              >Retry Quiz</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                        onPress={onSettingPressed}
+                        style={{
+                            backgroundColor: COLORS.accent, padding: 10, width: '60%', borderRadius: 10, alignItems: 'center', marginTop: 10
+                        }}
+                        >
+                             <Text
+                             style={{
+                                fontSize: 18, color: COLORS.white
+                             }}
+                             >Setting Screen</Text>
                         </TouchableOpacity>
                     </View>
                     

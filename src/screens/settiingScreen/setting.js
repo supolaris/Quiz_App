@@ -11,6 +11,9 @@ import People from "react-native-vector-icons/Ionicons"
 
 
 const SettingScreen = () => {
+
+
+
   return (
     <View
     style={settingStyles.Container}
