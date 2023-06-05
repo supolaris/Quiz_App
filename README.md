@@ -35,6 +35,10 @@ npm install react-native-gesture-handler
 ```bash
 npm install @react-native-masked-view/masked-view
 ```
+Bottom Tab Navigation:
+```bash
+npm install @react-navigation/bottom-tabs
+```
 Lottie:
 ```bash
 yarn add lottie-react-native

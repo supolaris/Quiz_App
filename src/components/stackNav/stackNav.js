@@ -14,6 +14,20 @@ export default function StackNav () {
         <NavigationContainer>
             <Stack.Navigator>
 
+
+
+            <Stack.Screen 
+                options={{
+                    headerShown: false
+                }}
+                name="StartUp"
+                component={StartUpScreen}
+                />
+            <Stack.Screen 
+                name="Quiz"
+                component={QuizScreen}
+                />
+
             <Stack.Screen 
             options={{
                 headerShown: false
@@ -22,18 +36,9 @@ export default function StackNav () {
                 component={SettingScreen}
                 />    
 
-            <Stack.Screen 
-                name="Quiz"
-                component={QuizScreen}
-                />
 
-                <Stack.Screen 
-                options={{
-                    headerShown: false
-                }}
-                name="StartUp"
-                component={StartUpScreen}
-                />
+
+
                 <Stack.Screen 
                 options={{
                     title:"Sign Up",
