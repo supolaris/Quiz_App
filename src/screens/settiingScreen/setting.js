@@ -1,104 +1,160 @@
-import React from "react";
-import {Text, View, SafeAreaView, ScrollView, TouchableOpacity} from "react-native";
-import { settingStyles } from "./settingStyles";
-import FeatherIcon from "react-native-vector-icons/Feather"
+import { View, Text, TouchableOpacity, Image } from 'react-native'
+import React from 'react'
+import { settingStyles } from './settingStyles'
+import Usericona from 'react-native-vector-icons/AntDesign'
+import Headphoneicona from 'react-native-vector-icons/Feather'
+import Settingicona from "react-native-vector-icons/AntDesign"
+import Hearto from "react-native-vector-icons/AntDesign"
+import Message1 from "react-native-vector-icons/AntDesign"
+import Book from "react-native-vector-icons/AntDesign"
+import People from "react-native-vector-icons/Ionicons"
 
 
-const section = [
-  {
-    header: 'preferences',
-    items: [
-      {id: 'language', icon: 'globe', label: 'language', type: 'select'},
-      {id: 'dardmode', icon: 'moon', label: 'dark-mode', type: 'toogle'},
-      {id: 'wifi', icon: 'wifi', label: 'Use Wi-Fi', type: 'toogle'},
-    ]
-  },
-  {
-    header: 'help',
-    items: [
-      {id: 'bug', icon: 'flag', label: 'report bug', type: 'link'},
-      {id: 'contant', icon: 'main', label: 'contact us', type: 'link'},
-    ]
-  },
-  {
-    header: 'content',
-    items: [
-      {id: 'save', icon: 'save', label: 'saved', type: 'link'},
-      {id: 'dowbload', icon: 'dowbload', label: 'downloads', type: 'link'},
-    ]
-  },
-
-]
-
-export default function SettingScreen() {
-  return(
-    <SafeAreaView
-    style={settingStyles.container}
+const SettingScreen = () => {
+  return (
+    <View
+    style={settingStyles.Container}
     >
-    <ScrollView >
+
       <View
-      style={settingStyles.header}
+      style={settingStyles.imageView}
+      >
+        <Image 
+        resizeMode='contain'
+        style={settingStyles.userImage}
+        source={require("../../../assets/images/profile.png")}
+        
+        />
+        <View
+        style={{paddingLeft: 15}}
+        >
+          <Text
+          style={{fontWeight: 'bold', fontSize: 18}}
+          >Polaris</Text>
+          <Text
+          style={{fontSize: 14}}
+          >RN Developer</Text>
+        </View>
+
+      </View>
+      <View
+      style={{justifyContent: 'center', alignItems: 'center', marginBottom: 10}}
       >
         <Text
-        style={settingStyles.title}
-        >Settings</Text>
+        style={{fontSize: 18}}
+        >Learn,</Text>
         <Text
-        style={settingStyles.subtitle}
-        >Update your preferences here</Text>
+        style={{fontSize: 16}}
+        >Learn and Educate the world</Text>
       </View>
-
-      {section.map(({header, items}) => (
-        <View
-        style={settingStyles.section} key={header}
+      
+      <View
+      style={{padding: 0}}
+      >
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20  }}
         >
-          <View 
-          style={settingStyles.headerSection}>
-            <Text
-            style={settingStyles.headertext}
-            >{header}</Text>
-          </View>
+          <Usericona 
+          name='user'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >Person Data</Text>
 
-          <View
-          style={settingStyles.labelsection}
-          >
-            {items.map(({label, id, type, icon}, index) => (
-              <View
-              style={[settingStyles.label,
-                index == 0 && {borderTopWidth: 0}, ]} key={id}
-              >
-                <TouchableOpacity
-                onPress={() => {
-                  //onpress handle
-                }}
-                >
-                  <View 
-                  style={settingStyles.row}
-                  >
-                    <FeatherIcon 
-                    name={icon}
-                    color="white"
-                    size={22}
-                    style={{marginRight: 12}}
-                    />
-                  <Text
-                  style={settingStyles.labeltext}
-                  >{label}</Text>
+        </TouchableOpacity>
 
-                  </View>
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20 }}
+        >
+          <Settingicona 
+          name='setting'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >Settings</Text>
 
-                </TouchableOpacity>
-              </View>
-            ))}
+        </TouchableOpacity>
 
-          </View>
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20 }}
+        >
+          <Hearto 
+          name='hearto'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >Refferal code</Text>
 
-        </View>
-      ))}
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20 }}
+        >
+          <Message1 
+          name='message1'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >FAQs</Text>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20 }}
+        >
+          <Book 
+          name='book'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >Our handbook</Text>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        style={{flexDirection: 'row', paddingBottom: 5, borderBottomWidth: 0.5, marginVertical: 20 }}
+        >
+          <People 
+          name='people'
+          size={20}
+          />
+          <Text
+          style={settingStyles.touchtext}
+          >Community</Text>
+
+        </TouchableOpacity>
 
 
 
-    </ScrollView>
-    </SafeAreaView>
+        <TouchableOpacity
+        style={{
+        flexDirection: 'row',
+        paddingBottom: 5,
+        marginVertical: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+        borderRadius: 20
+       }}
+        >
+          <Headphoneicona 
+          name='headphones'
+          size={20}
+          />
+          <Text
+          style={settingStyles.endText}
+          >Feel free to ask. We ready to help</Text>
+
+        </TouchableOpacity>
+
+      </View>
+    </View>
   )
-
 }
+
+export default SettingScreen;
