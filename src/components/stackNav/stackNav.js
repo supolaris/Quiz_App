@@ -5,6 +5,7 @@ import QuizScreen from "../../screens/quizScreen/Quiz";
 import SignUpScreen from "../../screens/signUpScreen/signUp";
 import SignInScreen from "../../screens/signInScreen/signIn";
 import SettingScreen from "../../screens/settiingScreen/setting";
+import HomeScreen from "../../screens/homeScreen/home";
 
 export default function StackNav () {
 
@@ -48,6 +49,14 @@ export default function StackNav () {
                 }}
                 name="SignIn"
                 component={SignInScreen}
+                />
+
+                <Stack.Screen 
+                options={{
+                    title:"Home"
+                }}
+                name="Home"
+                component={HomeScreen}
                 />
             </Stack.Navigator>
 

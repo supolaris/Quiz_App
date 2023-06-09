@@ -122,8 +122,6 @@ const SettingScreen = () => {
 
         </TouchableOpacity>
 
-
-
         <TouchableOpacity
         style={{
         flexDirection: 'row',
