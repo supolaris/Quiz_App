@@ -18,7 +18,6 @@ const SettingScreen = () => {
     <View
     style={settingStyles.Container}
     >
-
       <View
       style={settingStyles.imageView}
       >
@@ -40,16 +39,7 @@ const SettingScreen = () => {
         </View>
 
       </View>
-      <View
-      style={{justifyContent: 'center', alignItems: 'center', marginBottom: 10}}
-      >
-        <Text
-        style={{fontSize: 18}}
-        >Learn,</Text>
-        <Text
-        style={{fontSize: 16}}
-        >Learn and Educate the world</Text>
-      </View>
+
       
       <View
       style={{padding: 0}}
@@ -141,8 +131,10 @@ const SettingScreen = () => {
         marginVertical: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
-        borderRadius: 20
+        paddingVertical: 5,
+        borderRadius: 20,
+        borderWidth: 1,
+        marginTop: 20
        }}
         >
           <Headphoneicona 

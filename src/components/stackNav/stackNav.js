@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import StartUpScreen from "../../screens/startUpScreen/startUp";
 import QuizScreen from "../../screens/quizScreen/Quiz";
 import SignUpScreen from "../../screens/signUpScreen/signUp";
-import SignInScreen from "../../screens/signInScreen copy/signIn";
+import SignInScreen from "../../screens/signInScreen/signIn";
 import SettingScreen from "../../screens/settiingScreen/setting";
 
 export default function StackNav () {
@@ -13,31 +13,26 @@ export default function StackNav () {
     return(
         <NavigationContainer>
             <Stack.Navigator>
-
-
-
-            <Stack.Screen 
+                <Stack.Screen 
                 options={{
                     headerShown: false
                 }}
                 name="StartUp"
                 component={StartUpScreen}
                 />
-            <Stack.Screen 
+
+                <Stack.Screen 
                 name="Quiz"
                 component={QuizScreen}
                 />
 
-            <Stack.Screen 
-            options={{
-                headerShown: false
-            }}        
+                <Stack.Screen 
+                options={{
+                    headerShown: false
+                }}        
                 name="Setting"
-                component={SettingScreen}
+                 component={SettingScreen}
                 />    
-
-
-
 
                 <Stack.Screen 
                 options={{
@@ -46,6 +41,7 @@ export default function StackNav () {
                 name="SignUp"
                 component={SignUpScreen}
                 />
+
                 <Stack.Screen 
                 options={{
                     title:"Sign In"
@@ -53,10 +49,6 @@ export default function StackNav () {
                 name="SignIn"
                 component={SignInScreen}
                 />
-
-
-                
-  
             </Stack.Navigator>
 
         </NavigationContainer>

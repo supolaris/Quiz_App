@@ -12,7 +12,7 @@ export const settingStyles = StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 20,
         paddingBottom: 40,
-        paddingTop: 40,
+        paddingTop: 20,
         paddingLeft: 30
 
     },
