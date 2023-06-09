@@ -9,6 +9,6 @@ import StartUpScreen from "./src/screens/startUpScreen/startUp";
 export default function App() {
 
   return ( 
-    <MyTabsNav />
+    <StackNav />
 
   ) }
