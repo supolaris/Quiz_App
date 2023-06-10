@@ -16,10 +16,6 @@ export default function StackNav () {
             <Stack.Navigator>
 
             <Stack.Screen 
-                name="Quiz"
-                component={QuizScreen}
-                />
-                <Stack.Screen 
                 options={{
                     headerShown: false
                 }}
@@ -27,6 +23,27 @@ export default function StackNav () {
                 component={StartUpScreen}
                 />
 
+                <Stack.Screen 
+                options={{
+                    title:"Sign Up",
+                }}
+                name="SignUp"
+                component={SignUpScreen}
+                />  
+
+
+                <Stack.Screen 
+                options={{
+                    title:"Sign In"
+                }}
+                name="SignIn"
+                component={SignInScreen}
+                />
+
+                <Stack.Screen 
+                name="Quiz"
+                component={QuizScreen}
+                />
 
                 <Stack.Screen 
                 options={{
@@ -36,21 +53,9 @@ export default function StackNav () {
                  component={SettingScreen}
                 />    
 
-                <Stack.Screen 
-                options={{
-                    title:"Sign Up",
-                }}
-                name="SignUp"
-                component={SignUpScreen}
-                />
 
-                <Stack.Screen 
-                options={{
-                    title:"Sign In"
-                }}
-                name="SignIn"
-                component={SignInScreen}
-                />
+
+
 
                 <Stack.Screen 
                 options={{
